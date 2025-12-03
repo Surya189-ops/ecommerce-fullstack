@@ -13,7 +13,8 @@ function CheckoutPage({ cart ,loadCart}) {
 
   useEffect(() => {
     const fetchCheckout=async()=>{
-      const response=await axios.get('/api/delivery-options?expand=estimatedDeliveryTime');
+      const response = await axios.get('https://ecommerce-fullstack-0klb.onrender.com/api/delivery-options?expand=estimatedDeliveryTime');
+
       setDeliveryOptions(response.data);
     };
      fetchCheckout();
@@ -22,7 +23,8 @@ function CheckoutPage({ cart ,loadCart}) {
 
   useEffect(()=>{
     const loadPayment=async()=>{
-      const response=await axios.get('/api/payment-summary');
+const response = await axios.get('https://ecommerce-fullstack-0klb.onrender.com/api/payment-summary');
+
       setPaymentSummary(response.data);
     }
     loadPayment();

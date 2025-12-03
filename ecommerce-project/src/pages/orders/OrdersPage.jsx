@@ -12,7 +12,8 @@ export function OrdersPage({ cart ,loadCart}) {
 
   useEffect(()=>{
     const fetchCart=async()=>{
-      const response=await axios.get('/api/orders?expand=products');
+const response = await axios.get('https://ecommerce-fullstack-0klb.onrender.com/api/orders?expand=products');
+
       setOrders(response.data);
     }
     fetchCart();
